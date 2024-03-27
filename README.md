@@ -55,6 +55,7 @@ Verilog code:
 ```verilog
 
 
+
 module signed_comparator(
     input [15:0] A,
     input [15:0] B,
@@ -99,12 +100,12 @@ not  notB6( notB[ 6], B[ 6] ); // notB6
 not  notB7( notB[ 7], B[ 7] ); // notB7
 not  notB8( notB[ 8], B[ 8] ); // notB8
 not  notB9( notB[ 9], B[ 9] ); // notB9
-not notA10( notB[10], B[10] ); // notB10
-not notA11( notB[11], B[11] ); // notB11
-not notA12( notB[12], B[12] ); // notB12
-not notA13( notB[13], B[13] ); // notB13
-not notA14( notB[14], B[14] ); // notB14
-not notA15( notB[15], B[15] ); // notB15
+not notB10( notB[10], B[10] ); // notB10
+not notB11( notB[11], B[11] ); // notB11
+not notB12( notB[12], B[12] ); // notB12
+not notB13( notB[13], B[13] ); // notB13
+not notB14( notB[14], B[14] ); // notB14
+not notB15( notB[15], B[15] ); // notB15
 
 wire notA[15:0];
 not  notA0 ( notA[ 0] , A[ 0] ); // notA0
@@ -221,50 +222,50 @@ wire exp2[16:0];
 
 and and0(exp2[0], notA[15], B[15]); // A[15]'.B[15]
 
-and and17(buffer2[0], A[14], notB[14]); // A[14].B[14]'
-and and18(exp2[1], x[15], buffer2[0]); // A[14].B[14] .x15
+and andd17(buffer2[0], A[14], notB[14]); // A[14].B[14]'
+and andd18(exp2[1], x[15], buffer2[0]); // A[14].B[14] .x15
 
-and and19(buffer2[1], A[13], notB[13]); // A[13].B[13]'
-and and20(exp2[2], and_buffer[2], buffer2[1]); // A[13].B[13] .x15.x14
+and andd19(buffer2[1], A[13], notB[13]); // A[13].B[13]'
+and andd20(exp2[2], and_buffer[2], buffer2[1]); // A[13].B[13] .x15.x14
 
-and and21(buffer2[2], A[12], notB[12]); // A[13].B[13]'
-and and22(exp2[3], and_buffer[3], buffer2[2]); // A[13].B[13] .x15.x14.x13
+and andd21(buffer2[2], A[12], notB[12]); // A[13].B[13]'
+and andd22(exp2[3], and_buffer[3], buffer2[2]); // A[13].B[13] .x15.x14.x13
 
-and and23(buffer2[3], A[11], notB[11]); // A[11].B[11]'
-and and24(exp2[4], and_buffer[4], buffer2[3]); // A[11].B[11] .x15.x14.x13.x12
+and andd23(buffer2[3], A[11], notB[11]); // A[11].B[11]'
+and andd24(exp2[4], and_buffer[4], buffer2[3]); // A[11].B[11] .x15.x14.x13.x12
 
-and and25(buffer2[4], A[10], notB[10]); // A[10].B[10]'
-and and26(exp2[5], and_buffer[5], buffer2[4]); // A[10].B[10] .x15.x14.x13.x12.x11
+and andd25(buffer2[4], A[10], notB[10]); // A[10].B[10]'
+and andd26(exp2[5], and_buffer[5], buffer2[4]); // A[10].B[10] .x15.x14.x13.x12.x11
 
-and and27(buffer2[5], A[ 9], notB[ 9]); // A[ 9].B[ 9]'
-and and28(exp2[6], and_buffer[6], buffer2[5]); // A[ 9].B[ 9] .x15.x14.x13.x12.x11.x10
+and andd27(buffer2[5], A[ 9], notB[ 9]); // A[ 9].B[ 9]'
+and andd28(exp2[6], and_buffer[6], buffer2[5]); // A[ 9].B[ 9] .x15.x14.x13.x12.x11.x10
 
-and and29(buffer2[6], A[ 8], notB[ 8]); // A[ 8].B[ 8]'
-and and30(exp2[7], and_buffer[7], buffer2[6]); // A[ 8].B[ 8] .x15.x14.x13.x12.x11.x10.x9
+and andd29(buffer2[6], A[ 8], notB[ 8]); // A[ 8].B[ 8]'
+and andd30(exp2[7], and_buffer[7], buffer2[6]); // A[ 8].B[ 8] .x15.x14.x13.x12.x11.x10.x9
 
-and and31(buffer2[7], A[ 7], notB[ 7]); // A[ 7].B[ 7]'
-and and32(exp2[8], and_buffer[8], buffer2[7]); // A[ 7].B[ 7] .x15.x14.x13.x12.x11.x10.x9.x8
+and andd31(buffer2[7], A[ 7], notB[ 7]); // A[ 7].B[ 7]'
+and andd32(exp2[8], and_buffer[8], buffer2[7]); // A[ 7].B[ 7] .x15.x14.x13.x12.x11.x10.x9.x8
 
-and and33(buffer2[8], A[ 6], notB[ 6]); // A[ 6].B[ 6]'
-and and34(exp2[9], and_buffer[9], buffer2[8]); // A[ 6].B[ 6] .x15.x14.x13.x12.x11.x10.x9.x8.x7
+and andd33(buffer2[8], A[ 6], notB[ 6]); // A[ 6].B[ 6]'
+and andd34(exp2[9], and_buffer[9], buffer2[8]); // A[ 6].B[ 6] .x15.x14.x13.x12.x11.x10.x9.x8.x7
 
-and and35(buffer2[9], A[ 5], notB[ 5]); // A[ 5].B[ 5]'
-and and36(exp2[10], and_buffer[10], buffer2[9]); // A[ 5].B[ 5] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6
+and andd35(buffer2[9], A[ 5], notB[ 5]); // A[ 5].B[ 5]'
+and andd36(exp2[10], and_buffer[10], buffer2[9]); // A[ 5].B[ 5] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6
 
-and and37(buffer2[10], A[ 4], notB[ 4]); // A[ 4].B[ 4]'
-and and38(exp2[11], and_buffer[11], buffer2[10]); // A[ 4].B[ 4] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5
+and andd37(buffer2[10], A[ 4], notB[ 4]); // A[ 4].B[ 4]'
+and andd38(exp2[11], and_buffer[11], buffer2[10]); // A[ 4].B[ 4] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5
 
-and and39(buffer2[11], A[ 3], notB[ 3]); // A[ 3].B[ 3]'
-and and40(exp2[12], and_buffer[12], buffer2[11]); // A[ 3].B[ 3] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4
+and andd39(buffer2[11], A[ 3], notB[ 3]); // A[ 3].B[ 3]'
+and andd40(exp2[12], and_buffer[12], buffer2[11]); // A[ 3].B[ 3] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4
 
-and and41(buffer2[12], A[ 2], notB[ 2]); // A[ 2].B[ 2]'
-and and42(exp2[13], and_buffer[13], buffer2[12]); // A[ 2].B[ 2] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3
+and andd41(buffer2[12], A[ 2], notB[ 2]); // A[ 2].B[ 2]'
+and andd42(exp2[13], and_buffer[13], buffer2[12]); // A[ 2].B[ 2] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3
 
-and and43(buffer2[13], A[ 1], notB[ 1]); // A[ 1].B[ 1]'
-and and44(exp2[14], and_buffer[14], buffer2[13]); // A[ 1].B[ 1] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2
+and andd43(buffer2[13], A[ 1], notB[ 1]); // A[ 1].B[ 1]'
+and andd44(exp2[14], and_buffer[14], buffer2[13]); // A[ 1].B[ 1] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2
 
-and and45(buffer2[14], A[ 0], notB[ 0]); // A[ 0].B[ 0]'
-and and46(exp2[15], and_buffer[15], buffer2[14]); // A[ 0].B[ 0] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
+and andd45(buffer2[14], A[ 0], notB[ 0]); // A[ 0].B[ 0]'
+and andd46(exp2[15], and_buffer[15], buffer2[14]); // A[ 0].B[ 0] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
 
 or or_buffer2_16(or_buffer2[16], exp2[15], 1'b0); // exp2[15]
 or or_buffer2_15(or_buffer2[15], exp2[14], or_buffer2[16]); // exp2[15] + exp2[14]
@@ -290,6 +291,8 @@ assign g = or_buffer2[1];
 assign e = and_buffer[16];
 
 endmodule
+
+
 
 
 ```
