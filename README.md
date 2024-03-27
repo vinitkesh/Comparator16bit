@@ -4,45 +4,45 @@ The logical expression of a 16 bit unsigned comparator is given by:
 
 ```
 
-A > B = A15'.B15 
-        + A15.B15'.x1
-        + A15.B15'.x2.x1
-        + A15.B15'.x3.x2.x1
-        + A15.B15'.x4.x3.x2.x1
-        + A15.B15'.x5.x4.x3.x2.x1
-        + A15.B15'.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15.B15'.x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
+A > B =   A[15]'.[B15] 
+        + A[14].B[14]' .x15
+        + A[13].B[13]' .x15.x14
+        + A[13].B[13]' .x15.x14.x13
+        + A[11].B[11]' .x15.x14.x13.x12
+        + A[10].B[10]' .x15.x14.x13.x12.x11
+        + A[ 9].B[ 9]' .x15.x14.x13.x12.x11.x10
+        + A[ 8].B[ 8]' .x15.x14.x13.x12.x11.x10.x9
+        + A[ 7].B[ 7]' .x15.x14.x13.x12.x11.x10.x9.x8
+        + A[ 6].B[ 6]' .x15.x14.x13.x12.x11.x10.x9.x8.x7
+        + A[ 5].B[ 5]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6
+        + A[ 4].B[ 4]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5
+        + A[ 3].B[ 3]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4
+        + A[ 2].B[ 2]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3
+        + A[ 1].B[ 1]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2
+        + A[ 0].B[ 0]' .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
   
-A < B = A15.B15'
-        + A15'.B15.x1
-        + A15'.B15.x2.x1
-        + A15'.B15.x3.x2.x1
-        + A15'.B15.x4.x3.x2.x1
-        + A15'.B15.x5.x4.x3.x2.x1
-        + A15'.B15.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
-        + A15'.B15.x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
+A < B =   A[15]'.[B15] 
+        + A[14]'.B[14] .x15
+        + A[13]'.B[13] .x15.x14
+        + A[13]'.B[13] .x15.x14.x13
+        + A[11]'.B[11] .x15.x14.x13.x12
+        + A[10]'.B[10] .x15.x14.x13.x12.x11
+        + A[ 9]'.B[ 9] .x15.x14.x13.x12.x11.x10
+        + A[ 8]'.B[ 8] .x15.x14.x13.x12.x11.x10.x9
+        + A[ 7]'.B[ 7] .x15.x14.x13.x12.x11.x10.x9.x8
+        + A[ 6]'.B[ 6] .x15.x14.x13.x12.x11.x10.x9.x8.x7
+        + A[ 5]'.B[ 5] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6
+        + A[ 4]'.B[ 4] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5
+        + A[ 3]'.B[ 3] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4
+        + A[ 2]'.B[ 2] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3
+        + A[ 1]'.B[ 1] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2
+        + A[ 0]'.B[ 0] .x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
 
 (A = B) = x1.x2.x3.x4.x5.x6.x7.x8.x9.x10.x11.x12.x13.x14.x15
 
 where 
 
-xi = Ai.Bi + Ai.Bi' = Ai XOR Bi
+xi = Ai.Bi + Ai'.Bi' = Ai XNOR Bi
 
 ```
 
@@ -54,17 +54,22 @@ Verilog code:
 
 ```verilog
 
+
 module signed_comparator(
     input [15:0] A,
     input [15:0] B,
-    output [1:0] ans
+    output g ,
+    output l ,
+    output e
 );
 
 wire [15:0] x;
 
-xor16 x1(A[0], B[0], x[0]);
-xor16 x2(A[1], B[1], x[1]);
-xor16 x3(A[2], B[2], x[2]);
+
+// Wires for all the xor gates:
+xor16 x1(A[0], B[0], x[0]); // x1
+xor16 x2(A[1], B[1], x[1]); // x2
+xor16 x3(A[2], B[2], x[2]); 
 xor16 x4(A[3], B[3], x[3]);
 xor16 x5(A[4], B[4], x[4]);
 xor16 x6(A[5], B[5], x[5]);
@@ -76,34 +81,53 @@ xor16 x11(A[10], B[10], x[10]);
 xor16 x12(A[11], B[11], x[11]);
 xor16 x13(A[12], B[12], x[12]);
 xor16 x14(A[13], B[13], x[13]);
-xor16 x15(A[14], B[14], x[14]);
-xor16 x16(A[15], B[15], x[15]);
-
-wire [1:0] ans;
+xor16 x15(A[14], B[14], x[14]); //x15
 
 wire exp_less[15:0];
 wire and_buffer[16:0];
 
-and and0(and_buffer[0], A[15], B[15]);
-and and1(and_buffer[1], x[15], and_buffer[0]);
-and and2(and_buffer[2], x[14], and_buffer[1]);
-and and3(and_buffer[3], x[13], and_buffer[2]);
-and and4(and_buffer[4], x[12], and_buffer[3]);
-and and5(and_buffer[5], x[11], and_buffer[4]);
-and and6(and_buffer[6], x[10], and_buffer[5]);
-and and7(and_buffer[7], x[9], and_buffer[6]);
-and and8(and_buffer[8], x[8], and_buffer[7]);
-and and9(and_buffer[9], x[7], and_buffer[8]);
-and and10(and_buffer[10], x[6], and_buffer[9]);
-and and11(and_buffer[11], x[5], and_buffer[10]);
-and and12(and_buffer[12], x[4], and_buffer[11]);
-and and13(and_buffer[13], x[3], and_buffer[12]);
-and and14(and_buffer[14], x[2], and_buffer[13]);
-and and15(and_buffer[15], x[1], and_buffer[14]);
-and and16(and_buffer[16], x[0], and_buffer[15]);
+// wires to store each statement to be used in the A > B statement :
+
+wire notB[15:0];
+not  not0 ( notB[ 0] , B[ 0] ); // notB0
+not  not1 ( notB[ 1] , B[ 1] ); // notB1
+not  not2 ( notB[ 2] , B[ 2] );
+not  not3 ( notB[ 3] , B[ 3] );
+not  not4 ( notB[ 4] , B[ 4] );
+not  not5 ( notB[ 5] , B[ 5] );
+not  not6 ( notB[ 6] , B[ 6] );
+not  not7 ( notB[ 7] , B[ 7] );
+not  not8 ( notB[ 8] , B[ 8] );
+not  not9 ( notB[ 9] , B[ 9] );
+not not10 ( notB[10] , B[10] );
+not not11 ( notB[11] , B[11] );
+not not12 ( notB[12] , B[12] );
+not not13 ( notB[13] , B[13] );
+not not14 ( notB[14] , B[14] );
+not not15 ( notB[15] , B[15] ); // notB15
+
+
+and and1 (and_buffer[ 1], x[15], 1); 
+and and2 (and_buffer[ 2], x[14], and_buffer[ 1]);
+and and3 (and_buffer[ 3], x[13], and_buffer[ 2]);
+and and4 (and_buffer[ 4], x[12], and_buffer[ 3]);
+and and5 (and_buffer[ 5], x[11], and_buffer[ 4]);
+and and6 (and_buffer[ 6], x[10], and_buffer[ 5]);
+and and7 (and_buffer[ 7], x[ 9], and_buffer[ 6]);
+and and8 (and_buffer[ 8], x[ 8], and_buffer[ 7]);
+and and9 (and_buffer[ 9], x[ 7], and_buffer[ 8]);
+and and10(and_buffer[10], x[ 6], and_buffer[ 9]);
+and and11(and_buffer[11], x[ 5], and_buffer[10]);
+and and12(and_buffer[12], x[ 4], and_buffer[11]);
+and and13(and_buffer[13], x[ 3], and_buffer[12]);
+and and14(and_buffer[14], x[ 2], and_buffer[13]);
+and and15(and_buffer[15], x[ 1], and_buffer[14]);
+and and16(and_buffer[16], x[ 0], and_buffer[15]);
 
 wire or_buffer[16:0];
 
+
+// All the statments are being or'd : 
 or or0(or_buffer[0], and_buffer[0], and_buffer[1]);
 or or1(or_buffer[1], or_buffer[0], and_buffer[2]);
 or or2(or_buffer[2], or_buffer[1], and_buffer[3]);
@@ -121,8 +145,9 @@ or or13(or_buffer[13], or_buffer[12], and_buffer[14]);
 or or14(or_buffer[14], or_buffer[13], and_buffer[15]);
 or or15(or_buffer[15], or_buffer[14], and_buffer[16]);
 
-assign ans[0] = or_buffer[15];
+assign g = or_buffer[15];
 
+// wires to store each statement to be used in the A < B statement :
 and and17(and_buffer[17], A[15], B[15]);
 and and18(and_buffer[18], x[0], and_buffer[17]);
 and and19(and_buffer[19], x[1], and_buffer[18]);
@@ -163,5 +188,11 @@ assign ans[1] = or_buffer[32];
 
 endmodule
 
+
 ```
+
+
+
+
+
 
