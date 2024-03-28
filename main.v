@@ -1,5 +1,3 @@
-
-
 module signed_comparator(
     input [15:0] A,
     input [15:0] B,
@@ -164,7 +162,7 @@ wire exp2[16:0];
 
 // All the statments are being or'd :
 
-and and0(exp2[0], notA[15], B[15]); // A[15]'.B[15]
+and and00(exp2[0], notA[15], B[15]); // A[15]'.B[15]
 
 and andd17(buffer2[0], A[14], notB[14]); // A[14].B[14]'
 and andd18(exp2[1], x[15], buffer2[0]); // A[14].B[14] .x15
@@ -228,11 +226,8 @@ or or_buffer2_3(or_buffer2[ 3], exp2[ 2], or_buffer2[ 4]);
 or or_buffer2_2(or_buffer2[ 2], exp2[ 1], or_buffer2[ 3]);
 or or_buffer2_1(or_buffer2[ 1], exp2[ 0], or_buffer2[ 2]);
 
-assign l = or_buffer1[1];
-
-assign g = or_buffer2[1];
-
-assign e = and_buffer[16];
+and annd0(l,1, or_buffer1[1]);
+and annd1(g,1, or_buffer2[1]);
+and annd2(e,1, and_buffer[16]);
 
 endmodule
-
