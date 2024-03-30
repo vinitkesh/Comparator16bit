@@ -1,12 +1,27 @@
 module signed_comparator(
-    input [15:0] A,B,
-	 
+    input [15:0] A,
+	 input [15:0] B,
     output g ,
     output l ,
     output e
 );
 
-wire x[15:0];
+
+wire x [15:0];
+wire exp_less[15:0];
+wire and_buffer[16:0];
+wire notB[15:0];
+
+wire notA[15:0];
+
+wire or_buffer1[16:0];
+wire buffer1[16:0];
+wire exp1[16:0];
+
+wire or_buffer2[16:0];
+wire buffer2[16:0];
+wire exp2[16:0];
+
 
 // Wires for all the xor gates:
 xor  x1(x[ 0], A[ 0], B[ 0] ); // x1
@@ -25,12 +40,10 @@ xor x13(x[12], A[12], B[12] ); // x13
 xor x14(x[13], A[13], B[13] ); // x14
 xor x15(x[14], A[14], B[14] ); // x15
 
-wire exp_less[15:0];
-wire and_buffer[16:0];
 
 // wires to store each statement to be used in the A > B statement :
 
-wire notB[15:0];
+
 not  notB0( notB[ 0], B[ 0] ); // notB0
 not  notB1( notB[ 1], B[ 1] ); // notB1
 not  notB2( notB[ 2], B[ 2] ); // notB2 
@@ -48,7 +61,8 @@ not notB13( notB[13], B[13] ); // notB13
 not notB14( notB[14], B[14] ); // notB14
 not notB15( notB[15], B[15] ); // notB15
 
-wire notA[15:0];
+
+
 not  notA0 ( notA[ 0] , A[ 0] ); // notA0
 not  notA1 ( notA[ 1] , A[ 1] ); // notA1
 not  notA2 ( notA[ 2] , A[ 2] ); // notA2
@@ -66,7 +80,7 @@ not notA13 ( notA[13] , A[13] ); // notA13
 not notA14 ( notA[14] , A[14] ); // notA14
 not notA15 ( notA[15] , A[15] ); // notA15
 
-and and1 (and_buffer[ 1], x[15], 1);              // x15
+and and1 (and_buffer[ 1], x[15], 1'b1);              // x15
 and and2 (and_buffer[ 2], x[14], and_buffer[ 1]); // x15.x14
 and and3 (and_buffer[ 3], x[13], and_buffer[ 2]); // x15.x14.x13
 and and4 (and_buffer[ 4], x[12], and_buffer[ 3]); // x15.x14.x13.x12
@@ -83,9 +97,6 @@ and and14(and_buffer[14], x[ 2], and_buffer[13]); // .
 and and15(and_buffer[15], x[ 1], and_buffer[14]); // .
 and and16(and_buffer[16], x[ 0], and_buffer[15]); // x15.x14.x13.x12.x11.x10.x9.x8.x7.x6.x5.x4.x3.x2.x1
 
-wire or_buffer1[16:0];
-wire buffer1[16:0];
-wire exp1[16:0];
 
 // All the statments are being or'd : 
 and and0(exp1[0], A[15], notB[15]); // A[15].B[15]'
@@ -153,9 +164,7 @@ or or_buffer1_2(or_buffer1[ 2], exp1[ 1], or_buffer1[ 3]);
 or or_buffer1_1(or_buffer1[ 1], exp1[ 0], or_buffer1[ 2]); // 
 
 
-wire or_buffer2[16:0];
-wire buffer2[16:0];
-wire exp2[16:0];
+
 
 // All the statments are being or'd :
 
@@ -223,8 +232,8 @@ or or_buffer2_3(or_buffer2[ 3], exp2[ 2], or_buffer2[ 4]);
 or or_buffer2_2(or_buffer2[ 2], exp2[ 1], or_buffer2[ 3]);
 or or_buffer2_1(or_buffer2[ 1], exp2[ 0], or_buffer2[ 2]);
 
-buf buf1(g, or_buffer1[1]);
-buf buf2(l, or_buffer2[1]);
-buf buf3(e, or_buffer1[16]);
+and buf1(g, or_buffer1[1],1'b1);
+and buf2(l, or_buffer2[1],1'b1);
+and buf3(e, or_buffer1[16],1'b1);
 
 endmodule
