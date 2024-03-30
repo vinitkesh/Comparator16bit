@@ -6,17 +6,17 @@ module comparator(
 	 output e
 );
 
-wire y [15:0];
-wire x [15:0];
-wire exp_less[15:0];
-wire and_buffer[16:0];
+wire y [15:0]; // to store xor gates
+wire x [15:0]; // to store xnor gates
 
-wire notB[15:0];
-wire notA[15:0];
+wire and_buffer[16:0]; // to store: A[15]B[15]'.x16.x15.... etc
 
-wire or_buffer1[16:0];
-wire buffer1[16:0];
-wire exp1[16:0];
+wire notB[15:0]; // to store not of each digit of B
+wire notA[15:0]; // to store not of each digit of B
+
+wire or_buffer1[16:0]; // to or all the exp1
+wire buffer1[16:0]; // buffer
+wire exp1[16:0]; 
 
 wire or_buffer2[16:0];
 wire buffer2[16:0];
