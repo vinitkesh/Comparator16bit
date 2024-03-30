@@ -1,6 +1,6 @@
 # Comparator16bit
 
-The logical expression of a 16 bit unsigned comparator is given by:
+The logical expression of a 16 bit signed comparator is given by:
 
 ```
 
